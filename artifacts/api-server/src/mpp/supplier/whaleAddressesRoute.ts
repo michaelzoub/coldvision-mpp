@@ -44,7 +44,7 @@ const whaleDataHandler: RequestHandler = async (req, res) => {
 
 function dynamicChargeMiddleware(): RequestHandler {
   return (req, res, next) => {
-    const { amount } = resolvePricingFromHeaders(
+    const { amount, rows: rowCount } = resolvePricingFromHeaders(
       req.headers["x-rows"] as string | undefined,
       req.headers["x-max-amount"] as string | undefined,
     );
@@ -52,6 +52,7 @@ function dynamicChargeMiddleware(): RequestHandler {
       amount,
       currency: PATHUSD,
       recipient: MPP_RECIPIENT,
+      description: `Whale addresses data feed — ${rowCount} rows @ $${PRICE_PER_ROW}/row`,
     }) as RequestHandler;
     paymentMiddleware(req, res, next);
   };
