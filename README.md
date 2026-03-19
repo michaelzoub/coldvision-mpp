@@ -1,20 +1,6 @@
 # ColdVision MPP
 
-On-chain wallet intelligence and whale address data, powered by the Machine Payments Protocol (MPP).
-
-## Project Structure
-
-```
-coldvision-mpp/
-  server/          Express API server (MPP-gated endpoints)
-  client/          Vite + React frontend
-  packages/
-    db/            Supabase database layer
-    api-zod/       API Zod schemas
-    api-client-react/  Generated React Query client
-    api-spec/      OpenAPI spec + Orval config
-  scripts/         Utility scripts
-```
+On-chain wallet intelligence and Polymarket insider detection, powered by the Machine Payments Protocol (MPP).
 
 ## Setup
 
@@ -40,9 +26,7 @@ cd client && bun run dev
 | `PORT` | Server port (default: 8080) |
 | `SUPABASE_URL` | Supabase project URL |
 | `SUPABASE_ANON_KEY` | Supabase anon/public key |
-| `MPP_SECRET_KEY` | Private key for fee sponsorship (0x-prefixed) |
 | `MPP_ADDRESS` | Wallet address that receives payments |
-| `MPP_TESTNET` | Set to `false` for mainnet (default: true) |
 
 ## API Routes
 
@@ -51,8 +35,6 @@ cd client && bun run dev
 | Method | Path | Description |
 |---|---|---|
 | `GET` | `/api/healthz` | Health check |
-| `GET` | `/api/mpp/supplier/echo/payment-info` | Payment info for echo |
-| `GET` | `/api/mpp/supplier/transform/payment-info` | Payment info for transform |
 | `GET` | `/api/mpp/consumer/wallet` | Tempo wallet status |
 | `GET` | `/api/mpp/consumer/services` | Discover MPP services |
 
@@ -60,10 +42,10 @@ cd client && bun run dev
 
 | Method | Path | Price | Description |
 |---|---|---|---|
-| `GET` | `/api/mpp/supplier/echo` | $0.001 | Echo service (returns query string) |
-| `POST` | `/api/mpp/supplier/transform` | $0.005 | Uppercase transform |
 | `GET` | `/api/mpp/supplier/potential-polymarket-insiders` | $0.10-$25.00 | Potential Polymarket insiders data feed |
 | `GET` | `/api/mpp/supplier/wallet-intel` | $0.50 | Wallet intelligence lookup |
+| `GET` | `/api/mpp/supplier/echo` | $0.001 | Echo service |
+| `POST` | `/api/mpp/supplier/transform` | $0.005 | Uppercase transform |
 
 ### Consumer
 
@@ -80,7 +62,7 @@ Returns potential Polymarket insider addresses with confidence scores, trade his
 - `x-max-amount` - Budget in USD (calculates max rows)
 
 ```bash
-mppx "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 5"
+tempo request "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 5"
 ```
 
 ## Wallet Intelligence
@@ -91,7 +73,7 @@ Takes a wallet address and returns an aggregated profile: EOA resolution, ENS id
 - `address` - Wallet address (0x-prefixed, 40 hex chars)
 
 ```bash
-mppx "http://localhost:8080/api/mpp/supplier/wallet-intel?address=0x342c993db074cb2ebb39346ca885636b3cf37f7b"
+tempo request "http://localhost:8080/api/mpp/supplier/wallet-intel?address=0x342c993db074cb2ebb39346ca885636b3cf37f7b"
 ```
 
 **Response:**
@@ -123,22 +105,6 @@ mppx "http://localhost:8080/api/mpp/supplier/wallet-intel?address=0x342c993db074
 }
 ```
 
-## Testing with mppx CLI
-
-```bash
-# Install mppx
-npm install -g mppx
-
-# Create a funded account
-mppx account create
-
-# Inspect a paid endpoint (no payment)
-mppx --inspect "http://localhost:8080/api/mpp/supplier/wallet-intel?address=0x342c993db074cb2ebb39346ca885636b3cf37f7b"
-
-# Make a paid request
-mppx "http://localhost:8080/api/mpp/supplier/wallet-intel?address=0x342c993db074cb2ebb39346ca885636b3cf37f7b"
-```
-
 ## Testing with Tempo CLI
 
 ```bash
@@ -149,13 +115,36 @@ curl -fsSL https://tempo.xyz/install | bash
 tempo wallet login
 
 # Dry run (preview cost)
-tempo request --dry-run "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders"
+tempo request --dry-run "https://coldvision-mpp-production.up.railway.app/api/mpp/supplier/potential-polymarket-insiders"
 
 # Make a paid request
-tempo request "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 1"
+tempo request "https://coldvision-mpp-production.up.railway.app/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 1"
+
+# Wallet intelligence lookup
+tempo request "https://coldvision-mpp-production.up.railway.app/api/mpp/supplier/wallet-intel?address=0x342c993db074cb2ebb39346ca885636b3cf37f7b"
 ```
 
+If testing locally, replace `https://coldvision-mpp-production.up.railway.app` with `http://localhost:8080`.
+
 > **Note:** Always wrap URLs containing `?` in quotes to prevent zsh glob expansion.
+
+## Project Structure
+
+```
+coldvision-mpp/
+  server/          Express API server (MPP-gated endpoints)
+  client/          Vite + React frontend
+  packages/
+    db/            Supabase database layer
+    api-zod/       API Zod schemas
+    api-client-react/  Generated React Query client
+    api-spec/      OpenAPI spec + Orval config
+  scripts/         Utility scripts
+```
+
+## Deployment (Railway)
+
+A `railway.json` is included at the repo root. Set the root directory to `/` in Railway, add your environment variables, and deploy. The healthcheck is at `/api/healthz`.
 
 ## Typecheck
 

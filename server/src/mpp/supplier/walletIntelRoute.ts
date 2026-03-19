@@ -1,5 +1,5 @@
 import { type RequestHandler, Router, type IRouter } from "express";
-import { mppx, PATHUSD, MPP_RECIPIENT } from "../mppxInstance";
+import { mppx, USDC, MPP_RECIPIENT } from "../mppxInstance";
 import { resolveWallet } from "../../utils/domeApi";
 import { lookupIdentity } from "../../utils/identityLookup";
 import { searchTwitterProfile } from "../../utils/twitterSearch";
@@ -57,7 +57,7 @@ walletIntelRouter.get(
   "/wallet-intel",
   mppx.charge({
     amount: PRICE_PER_LOOKUP,
-    currency: PATHUSD,
+    currency: USDC,
     recipient: MPP_RECIPIENT,
     description: `Wallet intelligence lookup - $${PRICE_PER_LOOKUP}/request`,
   }) as RequestHandler,

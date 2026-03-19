@@ -27,6 +27,8 @@ const allowlist = [
   "passport",
   "passport-local",
   "@supabase/supabase-js",
+  "mppx",
+  "viem",
   "stripe",
   "uuid",
   "ws",

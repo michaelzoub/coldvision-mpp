@@ -5,7 +5,7 @@ import {
   PRICE_PER_ROW,
   MAX_ROWS,
   MAX_CHARGE,
-  PATHUSD,
+  USDC,
   MPP_RECIPIENT,
 } from "../mppxInstance";
 
@@ -64,7 +64,7 @@ function dynamicChargeMiddleware(): RequestHandler {
     );
     const paymentMiddleware = mppx.charge({
       amount,
-      currency: PATHUSD,
+      currency: USDC,
       recipient: MPP_RECIPIENT,
       description: `Potential Polymarket insiders data feed - ${rowCount} rows @ $${PRICE_PER_ROW}/row`,
     }) as RequestHandler;

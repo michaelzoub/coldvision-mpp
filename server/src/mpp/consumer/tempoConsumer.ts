@@ -3,7 +3,8 @@ import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
 
-const TEMPO_BIN = process.env["TEMPO_BIN"] ?? `${process.env["HOME"]}/.tempo/bin/tempo`;
+const TEMPO_BIN =
+  process.env["TEMPO_BIN"] ?? `${process.env["HOME"]}/.local/bin/tempo`;
 
 export interface ConsumeOptions {
   method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
@@ -32,7 +33,8 @@ export async function consumeService(
     "request",
     "-t",
     ...(dryRun ? ["--dry-run"] : []),
-    "-X", method,
+    "-X",
+    method,
   ];
 
   for (const [key, value] of Object.entries(headers)) {
@@ -97,9 +99,13 @@ export async function discoverServices(
 
 export async function getWalletStatus(): Promise<ConsumeResult> {
   try {
-    const { stdout } = await execFileAsync(TEMPO_BIN, ["wallet", "-t", "whoami"], {
-      timeout: 15_000,
-    });
+    const { stdout } = await execFileAsync(
+      TEMPO_BIN,
+      ["wallet", "-t", "whoami"],
+      {
+        timeout: 15_000,
+      },
+    );
 
     let data: unknown;
     try {
