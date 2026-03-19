@@ -1,17 +1,21 @@
 import { Mppx, tempo } from "mppx/express";
+import { privateKeyToAccount } from "viem/accounts";
 
-export const PATHUSD = "0x20c0000000000000000000000000000000000000" as const;
+export const PATHUSD = "0x20c000000000000000000000b9537d11c60e8b50" as const;
 
 export const MPP_RECIPIENT =
   (process.env["MPP_RECIPIENT_ADDRESS"] as `0x${string}` | undefined) ??
   (process.env["MPP_ADDRESS"] as `0x${string}` | undefined) ??
   "0x0000000000000000000000000000000000000001";
 
+const secretKey = process.env["MPP_SECRET_KEY"] as `0x${string}` | undefined;
+
 export const mppx = Mppx.create({
   methods: [
     tempo({
       currency: PATHUSD,
       recipient: MPP_RECIPIENT,
+      ...(secretKey ? { feePayer: privateKeyToAccount(secretKey) } : {}),
     }),
   ],
 });
