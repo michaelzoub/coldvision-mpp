@@ -48,6 +48,42 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## MPP (x402-style) Architecture
+
+The server implements a Machine Payment Protocol (x402-style) architecture with three layers:
+
+### Consumer (`src/mpp/consumer/`)
+Calls external paid API services via `tempo` CLI. Key exports:
+- `consumeService(serviceId, path, options)` — calls a service endpoint through tempo with automatic payment
+- `discoverServices(search?)` — lists available services from the tempo marketplace
+- `getWalletStatus()` — checks wallet address and balance
+
+Consumer HTTP routes (mounted at `/api/mpp/consumer`):
+- `GET  /wallet` — wallet status
+- `GET  /services?search=` — discover services
+- `POST /call` — call a service: `{ serviceId, path, method?, body?, dryRun? }`
+
+### Supplier (`src/mpp/supplier/`)
+Exposes API routes protected by x402 payment middleware. Key exports:
+- `createSupplierRouter(routes)` — builds an Express router from `SupplierRouteDefinition[]`
+- `registerPaidRoute(router, definition)` — adds a single paid route + its `/payment-info` sibling
+
+Supplier HTTP routes (mounted at `/api/mpp/supplier`):
+- `GET  /echo` — returns query params (costs 1000 USDC atomic units)
+- `POST /transform` — uppercases string values in body (costs 5000 USDC atomic units)
+- `GET  /*/payment-info` — returns x402 payment requirements for any supplier route
+
+### Controller (`src/mpp/controller/`)
+Payment middleware enforcing the x402 protocol:
+- `requirePayment(config)` — Express middleware; returns HTTP 402 with payment requirements when `X-Payment` header is missing or invalid; sets `X-Payment-Response` header on success
+- `paymentInfo(config)` — handler for the `payment-info` sibling route
+- Types: `PaymentRequirement`, `PaymentPayload`, `SettlementResult`, `MPPRouteConfig`
+
+To configure, set env vars:
+- `MPP_PAY_TO_ADDRESS` — wallet address that receives payments (default: zero address)
+- `MPP_NETWORK` — network name (default: `base-sepolia`)
+- `TEMPO_BIN` — path to tempo binary (default: `~/.tempo/bin/tempo`)
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
