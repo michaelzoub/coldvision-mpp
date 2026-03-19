@@ -179,7 +179,7 @@ function WalletLookup() {
 
 | Method | Path | Price | Description |
 |---|---|---|---|
-| `GET` | `/api/mpp/supplier/potential-polymarket-insiders` | $0.10-$25.00 | Potential Polymarket insiders data feed |
+| `GET` | `/api/mpp/supplier/potential-polymarket-insiders` | $0.03-$7.50 | Potential Polymarket insiders data feed (limited time pricing) |
 | `GET` | `/api/mpp/supplier/wallet-intel?address=0x...` | $0.50 | Wallet intelligence lookup |
 | `GET` | `/api/mpp/supplier/echo` | $0.001 | Echo service |
 | `POST` | `/api/mpp/supplier/transform` | $0.005 | Uppercase transform |

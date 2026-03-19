@@ -16,6 +16,6 @@ export const mppx = Mppx.create({
   ],
 });
 
-export const PRICE_PER_ROW = 0.01;
+export const PRICE_PER_ROW = 0.03;
 export const MAX_ROWS = 250;
 export const MAX_CHARGE = PRICE_PER_ROW * MAX_ROWS;
