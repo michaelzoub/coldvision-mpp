@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "workspaces": [
-    "apps/*",
+    "server",
+    "client",
     "packages/*",
     "scripts"
   ],
   "scripts": {
     "build": "bun run typecheck && bun run --filter '*' build",
     "typecheck:libs": "tsc --build",
-    "typecheck": "bun run typecheck:libs && bun run --filter './apps/**' --filter './scripts' typecheck"
+    "typecheck": "bun run typecheck:libs && bun run --filter './server' --filter './client' --filter './scripts' typecheck"
   },
   "private": true,
   "devDependencies": {

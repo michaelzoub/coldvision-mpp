@@ -66,7 +66,7 @@ function dynamicChargeMiddleware(): RequestHandler {
       amount,
       currency: PATHUSD,
       recipient: MPP_RECIPIENT,
-      description: `Whale addresses data feed — ${rowCount} rows @ $${PRICE_PER_ROW}/row`,
+      description: `Whale addresses data feed - ${rowCount} rows @ $${PRICE_PER_ROW}/row`,
     }) as RequestHandler;
     paymentMiddleware(req, res, next);
   };

@@ -1,6 +1,7 @@
 import { Router, type IRouter, type Request, type Response } from "express";
 import { supplierRouter } from "../mpp/supplier/supplierRouter";
 import { whaleAddressesRouter } from "../mpp/supplier/whaleAddressesRoute";
+import { walletIntelRouter } from "../mpp/supplier/walletIntelRoute";
 import {
   consumeService,
   discoverServices,
@@ -11,6 +12,7 @@ const router: IRouter = Router();
 
 router.use("/supplier", supplierRouter);
 router.use("/supplier", whaleAddressesRouter);
+router.use("/supplier", walletIntelRouter);
 
 router.get("/consumer/wallet", async (_req: Request, res: Response) => {
   const result = await getWalletStatus();
@@ -32,7 +34,13 @@ router.get("/consumer/services", async (req: Request, res: Response) => {
 });
 
 router.post("/consumer/call", async (req: Request, res: Response) => {
-  const { serviceId, path: servicePath, method, body, dryRun } = req.body as {
+  const {
+    serviceId,
+    path: servicePath,
+    method,
+    body,
+    dryRun,
+  } = req.body as {
     serviceId: string;
     path: string;
     method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";

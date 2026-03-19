@@ -16,7 +16,7 @@ run = "bun run --filter @workspace/api-server dev"
 build = "bun run --filter @workspace/api-server build"
 
 [services.production.run]
-args = ["node", "apps/api-server/dist/index.cjs"]
+args = ["node", "server/dist/index.cjs"]
 
 [services.production.run.env]
 PORT = "8080"
