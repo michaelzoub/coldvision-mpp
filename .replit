@@ -1,24 +1,24 @@
-modules = ["nodejs-24", "postgresql-16"]
+modules = ["nodejs-24", "bun-1"]
 
 [[artifacts]]
-id = "artifacts/api-server"
+id = "apps/api-server"
 
 [[artifacts]]
-id = "artifacts/mockup-sandbox"
+id = "apps/mockup-sandbox"
 
 [deployment]
 router = "application"
 deploymentTarget = "autoscale"
 
 [deployment.postBuild]
-args = ["pnpm", "store", "prune"]
+args = ["bun", "install", "--production"]
 env = { "CI" = "true" }
 
 [workflows]
 runButton = "Project"
 
 [agent]
-stack = "PNPM_WORKSPACE"
+stack = "BUN"
 expertMode = true
 
 [postMerge]
