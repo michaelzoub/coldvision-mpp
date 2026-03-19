@@ -1,5 +1,6 @@
 import { Router, type IRouter, type Request, type Response } from "express";
 import { supplierRouter } from "../mpp/supplier/supplierRouter";
+import { whaleAddressesRouter } from "../mpp/supplier/whaleAddressesRoute";
 import {
   consumeService,
   discoverServices,
@@ -9,6 +10,7 @@ import {
 const router: IRouter = Router();
 
 router.use("/supplier", supplierRouter);
+router.use("/supplier", whaleAddressesRouter);
 
 router.get("/consumer/wallet", async (_req: Request, res: Response) => {
   const result = await getWalletStatus();
