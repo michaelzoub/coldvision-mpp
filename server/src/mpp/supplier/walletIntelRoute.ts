@@ -4,7 +4,7 @@ import { resolveWallet } from "../../utils/domeApi";
 import { lookupIdentity } from "../../utils/identityLookup";
 import { searchTwitterProfile } from "../../utils/twitterSearch";
 
-const PRICE_PER_LOOKUP = "0.50";
+const PRICE_PER_LOOKUP = "0.050";
 
 const ADDRESS_RE = /^0x[0-9a-fA-F]{40}$/;
 
