@@ -7,10 +7,7 @@
       "url": "https://mpp.api.agentmail.to",
       "serviceUrl": "https://mpp.api.agentmail.to",
       "description": "Email inboxes for AI agents.",
-      "categories": [
-        "ai",
-        "social"
-      ],
+      "categories": ["ai", "social"],
       "integration": "first-party",
       "tags": [
         "email",
@@ -27,12 +24,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.api.agentmail.to",
@@ -645,10 +638,7 @@
       "url": "https://agents.allium.so",
       "serviceUrl": "https://agents.allium.so",
       "description": "System of record for onchain finance. Real-time blockchain data: token prices, wallet balances, transactions, PnL, and SQL explorer.",
-      "categories": [
-        "blockchain",
-        "data"
-      ],
+      "categories": ["blockchain", "data"],
       "integration": "first-party",
       "tags": [
         "blockchain",
@@ -670,12 +660,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "agents.allium.so",
@@ -902,18 +888,9 @@
       "url": "https://api.anthropic.com",
       "serviceUrl": "https://anthropic.mpp.tempo.xyz",
       "description": "Claude chat completions (Sonnet, Opus, Haiku) via native and OpenAI-compatible APIs.",
-      "categories": [
-        "ai"
-      ],
+      "categories": ["ai"],
       "integration": "third-party",
-      "tags": [
-        "llm",
-        "claude",
-        "sonnet",
-        "opus",
-        "haiku",
-        "chat"
-      ],
+      "tags": ["llm", "claude", "sonnet", "opus", "haiku", "chat"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.anthropic.com",
@@ -922,12 +899,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -970,11 +943,7 @@
       "url": "https://mpp.browserbase.com",
       "serviceUrl": "https://mpp.browserbase.com",
       "description": "Headless browser sessions, web search, and page fetching for AI agents.",
-      "categories": [
-        "web",
-        "compute",
-        "search"
-      ],
+      "categories": ["web", "compute", "search"],
       "integration": "first-party",
       "tags": [
         "browser",
@@ -991,12 +960,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.browserbase.com",
@@ -1085,18 +1050,9 @@
       "url": "https://graph.codex.io",
       "serviceUrl": "https://graph.codex.io",
       "description": "Comprehensive onchain data API for tokens and prediction markets. Real-time prices, charts, trades, and wallet analytics across 80+ networks via GraphQL.",
-      "categories": [
-        "blockchain",
-        "data"
-      ],
+      "categories": ["blockchain", "data"],
       "integration": "first-party",
-      "tags": [
-        "graphql",
-        "defi",
-        "tokens",
-        "trades",
-        "nft"
-      ],
+      "tags": ["graphql", "defi", "tokens", "trades", "nft"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.codex.io",
@@ -1104,12 +1060,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "graph.codex.io",
@@ -1140,10 +1092,7 @@
       "url": "https://coldvision.dev",
       "serviceUrl": "https://coldvision.dev",
       "description": "On-chain whale address intelligence. Real-time tracking of high-conviction wallets with insider confidence scores, trade history, and bot detection.",
-      "categories": [
-        "blockchain",
-        "data"
-      ],
+      "categories": ["blockchain", "data"],
       "integration": "first-party",
       "tags": [
         "blockchain",
@@ -1161,12 +1110,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1177,8 +1122,8 @@
       "endpoints": [
         {
           "method": "GET",
-          "path": "/api/mpp/supplier/whale-addresses",
-          "description": "Whale address data feed with confidence scores, trade history, and bot detection",
+          "path": "/api/mpp/supplier/potential-polymarket-insiders",
+          "description": "Potential Polymarket insiders data feed with confidence scores, trade history, and bot detection",
           "payment": {
             "intent": "charge",
             "method": "tempo",
@@ -1197,30 +1142,17 @@
       "url": "https://dune.com",
       "serviceUrl": "https://api.dune.com",
       "description": "Execute SQL queries on Dune and retrieve results or CSV exports from completed executions.",
-      "categories": [
-        "data",
-        "blockchain"
-      ],
+      "categories": ["data", "blockchain"],
       "integration": "first-party",
-      "tags": [
-        "sql",
-        "analytics",
-        "blockchain",
-        "data",
-        "query"
-      ],
+      "tags": ["sql", "analytics", "blockchain", "data", "query"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.dune.com/api-reference/agents/mpp"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "api.dune.com",
@@ -1279,17 +1211,9 @@
       "url": "https://api.exa.ai",
       "serviceUrl": "https://exa.mpp.tempo.xyz",
       "description": "AI-powered web search, content retrieval, and answers.",
-      "categories": [
-        "search",
-        "ai"
-      ],
+      "categories": ["search", "ai"],
       "integration": "third-party",
-      "tags": [
-        "search",
-        "web",
-        "content",
-        "ai-search"
-      ],
+      "tags": ["search", "web", "content", "ai-search"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.exa.ai",
@@ -1297,12 +1221,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1375,10 +1295,7 @@
       "url": "https://fal.run",
       "serviceUrl": "https://fal.mpp.tempo.xyz",
       "description": "Image, video, and audio generation with 600+ models (Flux, SD, Recraft, Grok).",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
       "tags": [
         "image",
@@ -1395,12 +1312,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1641,17 +1554,9 @@
       "url": "https://api.firecrawl.dev",
       "serviceUrl": "https://firecrawl.mpp.tempo.xyz",
       "description": "Web scraping, crawling, and structured data extraction for LLMs.",
-      "categories": [
-        "web",
-        "data"
-      ],
+      "categories": ["web", "data"],
       "integration": "third-party",
-      "tags": [
-        "scraping",
-        "crawling",
-        "extraction",
-        "llm"
-      ],
+      "tags": ["scraping", "crawling", "extraction", "llm"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.firecrawl.dev",
@@ -1659,12 +1564,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1751,31 +1652,17 @@
       "url": "https://generativelanguage.googleapis.com",
       "serviceUrl": "https://gemini.mpp.tempo.xyz",
       "description": "Gemini text generation, Veo video, and Nano Banana image generation with model-tier pricing.",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
-      "tags": [
-        "llm",
-        "gemini",
-        "veo",
-        "imagen",
-        "video",
-        "multimodal"
-      ],
+      "tags": ["llm", "gemini", "veo", "imagen", "video", "multimodal"],
       "status": "active",
       "docs": {
         "homepage": "https://ai.google.dev/docs"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1876,16 +1763,9 @@
       "url": "https://api.modal.com",
       "serviceUrl": "https://modal.mpp.tempo.xyz",
       "description": "Serverless GPU compute for sandboxed code execution and AI/ML workloads.",
-      "categories": [
-        "compute"
-      ],
+      "categories": ["compute"],
       "integration": "third-party",
-      "tags": [
-        "gpu",
-        "serverless",
-        "sandbox",
-        "compute"
-      ],
+      "tags": ["gpu", "serverless", "sandbox", "compute"],
       "status": "active",
       "docs": {
         "homepage": "https://modal.com/docs",
@@ -1893,12 +1773,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -1972,10 +1848,7 @@
       "serviceUrl": "https://openai.mpp.tempo.xyz",
       "description": "Chat completions, embeddings, image generation, and audio with model-tier pricing.",
       "icon": "https://mpp.tempo.xyz/icons/openai.svg",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
       "tags": [
         "llm",
@@ -1994,13 +1867,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge",
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge", "session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -2101,16 +1969,9 @@
       "url": "https://openrouter.ai/api",
       "serviceUrl": "https://openrouter.mpp.tempo.xyz",
       "description": "Unified API for 100+ LLMs with live per-model pricing.",
-      "categories": [
-        "ai"
-      ],
+      "categories": ["ai"],
       "integration": "third-party",
-      "tags": [
-        "llm",
-        "unified",
-        "multi-model",
-        "chat"
-      ],
+      "tags": ["llm", "unified", "multi-model", "chat"],
       "status": "active",
       "docs": {
         "homepage": "https://openrouter.ai/docs",
@@ -2118,12 +1979,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -2154,29 +2011,17 @@
       "url": "https://parallelmpp.dev",
       "serviceUrl": "https://parallelmpp.dev",
       "description": "Web search, page extraction, and multi-hop web research.",
-      "categories": [
-        "search",
-        "ai"
-      ],
+      "categories": ["search", "ai"],
       "integration": "first-party",
-      "tags": [
-        "search",
-        "web",
-        "extraction",
-        "research"
-      ],
+      "tags": ["search", "web", "extraction", "research"],
       "status": "active",
       "docs": {
         "homepage": "https://parallelmpp.dev/#agents"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "parallelmpp.dev",
@@ -2235,18 +2080,9 @@
       "url": "https://eth-mainnet.g.alchemy.com",
       "serviceUrl": "https://mpp.alchemy.com",
       "description": "Blockchain data APIs including Core RPC APIs, Prices API, Portfolio API, and NFT API across 100+ chains.",
-      "categories": [
-        "blockchain",
-        "data"
-      ],
+      "categories": ["blockchain", "data"],
       "integration": "first-party",
-      "tags": [
-        "rpc",
-        "json-rpc",
-        "nft",
-        "evm",
-        "multichain"
-      ],
+      "tags": ["rpc", "json-rpc", "nft", "evm", "multichain"],
       "status": "active",
       "docs": {
         "homepage": "https://www.alchemy.com/docs",
@@ -2254,12 +2090,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "alchemy.com",
@@ -2318,17 +2150,9 @@
       "url": "https://rpc.tempo.xyz",
       "serviceUrl": "https://rpc.mpp.tempo.xyz",
       "description": "Tempo blockchain JSON-RPC access (mainnet and testnet).",
-      "categories": [
-        "blockchain"
-      ],
+      "categories": ["blockchain"],
       "integration": "first-party",
-      "tags": [
-        "rpc",
-        "json-rpc",
-        "evm",
-        "tempo",
-        "node"
-      ],
+      "tags": ["rpc", "json-rpc", "evm", "tempo", "node"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.tempo.xyz",
@@ -2336,12 +2160,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -2372,30 +2192,17 @@
       "url": "https://mpp.tempo.xyz/storage",
       "serviceUrl": "https://storage.mpp.tempo.xyz",
       "description": "S3/R2-compatible object storage with dynamic per-size pricing.",
-      "categories": [
-        "storage"
-      ],
+      "categories": ["storage"],
       "integration": "first-party",
-      "tags": [
-        "s3",
-        "r2",
-        "objects",
-        "blobs",
-        "files"
-      ],
+      "tags": ["s3", "r2", "objects", "blobs", "files"],
       "status": "active",
       "docs": {
         "homepage": "https://developers.cloudflare.com/r2/"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge",
-            "session"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge", "session"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -2477,17 +2284,9 @@
       "url": "https://stableemail.dev",
       "serviceUrl": "https://stableemail.dev",
       "description": "Pay-per-send email delivery, forwarding inboxes, and custom subdomains — no API keys or accounts.",
-      "categories": [
-        "social"
-      ],
+      "categories": ["social"],
       "integration": "first-party",
-      "tags": [
-        "email",
-        "send",
-        "inbox",
-        "forwarding",
-        "subdomain"
-      ],
+      "tags": ["email", "send", "inbox", "forwarding", "subdomain"],
       "status": "active",
       "docs": {
         "homepage": "https://stableemail.dev",
@@ -2495,12 +2294,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stableemail.dev",
@@ -2752,11 +2547,7 @@
       "url": "https://stableenrich.dev",
       "serviceUrl": "https://stableenrich.dev",
       "description": "Pay-per-request research APIs — people, companies, web search, scraping, places, social media, and contact enrichment.",
-      "categories": [
-        "data",
-        "search",
-        "social"
-      ],
+      "categories": ["data", "search", "social"],
       "integration": "first-party",
       "tags": [
         "apollo",
@@ -2775,12 +2566,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stableenrich.dev",
@@ -3148,10 +2935,7 @@
       "url": "https://stabletravel.dev",
       "serviceUrl": "https://stabletravel.dev",
       "description": "Pay-per-request travel APIs — flights, hotels, activities, transfers, and real-time flight tracking. Powered by Amadeus and FlightAware.",
-      "categories": [
-        "data",
-        "web"
-      ],
+      "categories": ["data", "web"],
       "integration": "first-party",
       "tags": [
         "amadeus",
@@ -3169,12 +2953,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stabletravel.dev",
@@ -4075,18 +3855,9 @@
       "url": "https://stablephone.dev",
       "serviceUrl": "https://stablephone.dev",
       "description": "AI phone calls, dedicated phone numbers, and iMessage/FaceTime lookup — pay per request.",
-      "categories": [
-        "ai",
-        "social"
-      ],
+      "categories": ["ai", "social"],
       "integration": "first-party",
-      "tags": [
-        "phone",
-        "call",
-        "voice",
-        "ai-call",
-        "imessage"
-      ],
+      "tags": ["phone", "call", "voice", "ai-call", "imessage"],
       "status": "active",
       "docs": {
         "homepage": "https://stablephone.dev",
@@ -4094,12 +3865,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stablephone.dev",
@@ -4186,10 +3953,7 @@
       "url": "https://stablesocial.dev",
       "serviceUrl": "https://stablesocial.dev",
       "description": "Pay-per-request social media data from TikTok, Instagram, Facebook, and Reddit.",
-      "categories": [
-        "social",
-        "data"
-      ],
+      "categories": ["social", "data"],
       "integration": "first-party",
       "tags": [
         "tiktok",
@@ -4206,12 +3970,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stablesocial.dev",
@@ -4702,10 +4462,7 @@
       "url": "https://stablestudio.dev",
       "serviceUrl": "https://stablestudio.dev",
       "description": "Pay-per-generation AI image and video creation — Nano Banana, GPT Image, Grok, Flux, Sora, Veo, Seedance, and Wan.",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "first-party",
       "tags": [
         "image",
@@ -4727,12 +4484,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stablestudio.dev",
@@ -5085,17 +4838,9 @@
       "url": "https://stableupload.dev",
       "serviceUrl": "https://stableupload.dev",
       "description": "Pay-per-upload file hosting and static site hosting with custom domains — 6 month TTL.",
-      "categories": [
-        "storage"
-      ],
+      "categories": ["storage"],
       "integration": "first-party",
-      "tags": [
-        "upload",
-        "files",
-        "hosting",
-        "static-site",
-        "cdn"
-      ],
+      "tags": ["upload", "files", "hosting", "static-site", "cdn"],
       "status": "active",
       "docs": {
         "homepage": "https://stableupload.dev",
@@ -5103,12 +4848,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stableupload.dev",
@@ -5181,26 +4922,14 @@
       "url": "https://api.aviationstack.com",
       "serviceUrl": "https://aviationstack.mpp.tempo.xyz",
       "description": "Real-time and historical flight tracking, airports, airlines, and schedules.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "flights",
-        "aviation",
-        "tracking",
-        "airports",
-        "airlines"
-      ],
+      "tags": ["flights", "aviation", "tracking", "airports", "airlines"],
       "status": "active",
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5360,28 +5089,17 @@
       "url": "https://code.storage",
       "serviceUrl": "https://codestorage.mpp.tempo.xyz",
       "description": "Paid Git repository creation — create repos and get authenticated clone URLs.",
-      "categories": [
-        "storage"
-      ],
+      "categories": ["storage"],
       "integration": "third-party",
-      "tags": [
-        "git",
-        "repos",
-        "code",
-        "storage"
-      ],
+      "tags": ["git", "repos", "code", "storage"],
       "status": "active",
       "docs": {
         "llmsTxt": "https://code.storage/docs/llms.txt"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5424,26 +5142,14 @@
       "url": "https://api.flightapi.io",
       "serviceUrl": "https://flightapi.mpp.tempo.xyz",
       "description": "Real-time flight prices, tracking, and airport schedules from 700+ airlines.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "flights",
-        "prices",
-        "tracking",
-        "airports",
-        "airlines"
-      ],
+      "tags": ["flights", "prices", "tracking", "airports", "airlines"],
       "status": "active",
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5551,26 +5257,14 @@
       "url": "https://goflightlabs.com",
       "serviceUrl": "https://goflightlabs.mpp.tempo.xyz",
       "description": "Real-time flight tracking, prices, schedules, and airline data.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "flights",
-        "tracking",
-        "prices",
-        "airlines",
-        "airports"
-      ],
+      "tags": ["flights", "tracking", "prices", "airlines", "airports"],
       "status": "active",
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5782,29 +5476,17 @@
       "url": "https://realtime.oxylabs.io",
       "serviceUrl": "https://oxylabs.mpp.tempo.xyz",
       "description": "Web scraping API with geo-targeting by country, state, and city. Fetch any public URL with JavaScript rendering support.",
-      "categories": [
-        "web",
-        "data"
-      ],
+      "categories": ["web", "data"],
       "integration": "third-party",
-      "tags": [
-        "scraping",
-        "web-scraping",
-        "geo-targeting",
-        "data-extraction"
-      ],
+      "tags": ["scraping", "web-scraping", "geo-targeting", "data-extraction"],
       "status": "active",
       "docs": {
         "apiReference": "https://developers.oxylabs.io/scraper-apis/web-scraper-api"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5834,18 +5516,9 @@
       "url": "https://api.spyfu.com",
       "serviceUrl": "https://spyfu.mpp.tempo.xyz",
       "description": "Competitor keyword research — SEO rankings, PPC ads, ad history, and domain analytics. 18+ years of historical data.",
-      "categories": [
-        "data",
-        "search"
-      ],
+      "categories": ["data", "search"],
       "integration": "third-party",
-      "tags": [
-        "seo",
-        "ppc",
-        "keyword-research",
-        "competitor-analysis",
-        "ads"
-      ],
+      "tags": ["seo", "ppc", "keyword-research", "competitor-analysis", "ads"],
       "status": "active",
       "docs": {
         "homepage": "https://developer.spyfu.com",
@@ -5853,12 +5526,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -5992,26 +5661,14 @@
       "url": "https://serpapi.com",
       "serviceUrl": "https://serpapi.mpp.tempo.xyz",
       "description": "Google Flights search — real-time prices, schedules, and booking options.",
-      "categories": [
-        "search",
-        "data"
-      ],
+      "categories": ["search", "data"],
       "integration": "third-party",
-      "tags": [
-        "search",
-        "flights",
-        "google",
-        "prices"
-      ],
+      "tags": ["search", "flights", "google", "prices"],
       "status": "active",
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -6041,9 +5698,7 @@
       "url": "https://maps.googleapis.com",
       "serviceUrl": "https://googlemaps.mpp.tempo.xyz",
       "description": "Google Maps Platform — geocoding, directions, places, routes, tiles, weather, air quality, and more.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
       "tags": [
         "maps",
@@ -6069,12 +5724,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -6622,17 +6273,9 @@
       "url": "https://api.kicks.dev",
       "serviceUrl": "https://kicksdb.mpp.tempo.xyz",
       "description": "Sneaker & streetwear market data — prices, sales history, and availability from StockX, GOAT, and more.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "sneakers",
-        "streetwear",
-        "prices",
-        "stockx",
-        "goat"
-      ],
+      "tags": ["sneakers", "streetwear", "prices", "stockx", "goat"],
       "status": "active",
       "docs": {
         "homepage": "https://kicks.dev",
@@ -6641,12 +6284,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -7040,15 +6679,9 @@
       "url": "https://api.2captcha.com",
       "serviceUrl": "https://twocaptcha.mpp.tempo.xyz",
       "description": "CAPTCHA solving API — reCAPTCHA, Turnstile, hCaptcha, image captchas, and more.",
-      "categories": [
-        "web"
-      ],
+      "categories": ["web"],
       "integration": "third-party",
-      "tags": [
-        "captcha",
-        "automation",
-        "solving"
-      ],
+      "tags": ["captcha", "automation", "solving"],
       "status": "active",
       "docs": {
         "homepage": "https://2captcha.com",
@@ -7056,12 +6689,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mpp.tempo.xyz",
@@ -7097,29 +6726,17 @@
       "url": "https://postalform.com",
       "serviceUrl": "https://postalform.com",
       "description": "Print and mail real letters and documents via AI agents.",
-      "categories": [
-        "web"
-      ],
+      "categories": ["web"],
       "integration": "first-party",
-      "tags": [
-        "mail",
-        "print",
-        "letters",
-        "physical",
-        "postal"
-      ],
+      "tags": ["mail", "print", "letters", "physical", "postal"],
       "status": "active",
       "docs": {
         "homepage": "https://postalform.com/agents"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "postalform.com",
@@ -7162,17 +6779,9 @@
       "url": "https://agents.prospectbutcher.shop",
       "serviceUrl": "https://agents.prospectbutcher.shop",
       "description": "Order sandwiches for pickup in Brooklyn — the first food purchase made entirely by an AI agent.",
-      "categories": [
-        "web"
-      ],
+      "categories": ["web"],
       "integration": "first-party",
-      "tags": [
-        "food",
-        "ordering",
-        "sandwiches",
-        "physical",
-        "restaurant"
-      ],
+      "tags": ["food", "ordering", "sandwiches", "physical", "restaurant"],
       "status": "active",
       "docs": {
         "homepage": "https://agents.prospectbutcher.shop",
@@ -7180,12 +6789,8 @@
       },
       "methods": {
         "stripe": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "usd"
-          ]
+          "intents": ["charge"],
+          "assets": ["usd"]
         }
       },
       "realm": "agents.prospectbutcher.shop",
@@ -7216,29 +6821,17 @@
       "url": "https://mapbox.mpp.paywithlocus.com",
       "serviceUrl": "https://mapbox.mpp.paywithlocus.com",
       "description": "Geocoding, directions, isochrones, map matching, static maps, and tile queries.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "maps",
-        "geocoding",
-        "directions",
-        "routing",
-        "geospatial"
-      ],
+      "tags": ["maps", "geocoding", "directions", "routing", "geospatial"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.mapbox.com"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mapbox.mpp.paywithlocus.com",
@@ -7367,9 +6960,7 @@
       "url": "https://rentcast.mpp.paywithlocus.com",
       "serviceUrl": "https://rentcast.mpp.paywithlocus.com",
       "description": "Real estate data including property records, valuations, rent estimates, sale and rental listings, and market statistics.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
       "tags": [
         "real-estate",
@@ -7385,12 +6976,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "rentcast.mpp.paywithlocus.com",
@@ -7547,10 +7134,7 @@
       "url": "https://stability.mpp.paywithlocus.com",
       "serviceUrl": "https://stability.mpp.paywithlocus.com",
       "description": "Generative AI for images, 3D models, and audio — including generation, editing, upscaling, background removal, style transfer, and more.",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
       "tags": [
         "ai",
@@ -7567,12 +7151,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "stability.mpp.paywithlocus.com",
@@ -7903,29 +7483,17 @@
       "url": "https://hunter.mpp.paywithlocus.com",
       "serviceUrl": "https://hunter.mpp.paywithlocus.com",
       "description": "Email finding, verification, and enrichment — domain search, person lookup, and company intelligence.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "email",
-        "enrichment",
-        "leads",
-        "verification",
-        "b2b"
-      ],
+      "tags": ["email", "enrichment", "leads", "verification", "b2b"],
       "status": "active",
       "docs": {
         "homepage": "https://hunter.io/api"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "hunter.mpp.paywithlocus.com",
@@ -8046,30 +7614,17 @@
       "url": "https://replicate.mpp.paywithlocus.com",
       "serviceUrl": "https://replicate.mpp.paywithlocus.com",
       "description": "Run open-source AI models — image generation, LLMs, video, audio, and more.",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
-      "tags": [
-        "ai",
-        "ml",
-        "models",
-        "inference",
-        "open-source"
-      ],
+      "tags": ["ai", "ml", "models", "inference", "open-source"],
       "status": "active",
       "docs": {
         "homepage": "https://replicate.com/docs"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "replicate.mpp.paywithlocus.com",
@@ -8134,9 +7689,7 @@
       "url": "https://builtwith.mpp.paywithlocus.com",
       "serviceUrl": "https://builtwith.mpp.paywithlocus.com",
       "description": "Technology detection and website profiling — discover what technologies websites use, find competitors, and analyze tech trends.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
       "tags": [
         "technology",
@@ -8151,12 +7704,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "builtwith.mpp.paywithlocus.com",
@@ -8353,30 +7902,17 @@
       "url": "https://suno.mpp.paywithlocus.com",
       "serviceUrl": "https://suno.mpp.paywithlocus.com",
       "description": "AI music and lyrics generation — create songs, instrumentals, and lyrics from text prompts.",
-      "categories": [
-        "ai",
-        "media"
-      ],
+      "categories": ["ai", "media"],
       "integration": "third-party",
-      "tags": [
-        "ai",
-        "music",
-        "audio",
-        "lyrics",
-        "generation"
-      ],
+      "tags": ["ai", "music", "audio", "lyrics", "generation"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.suno.com"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "suno.mpp.paywithlocus.com",
@@ -8439,29 +7975,17 @@
       "url": "https://weather.mpp.paywithlocus.com",
       "serviceUrl": "https://weather.mpp.paywithlocus.com",
       "description": "Weather data including current conditions, 5-day forecasts, air quality, geocoding, and comprehensive one-call weather.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "weather",
-        "forecast",
-        "air-quality",
-        "geocoding",
-        "climate"
-      ],
+      "tags": ["weather", "forecast", "air-quality", "geocoding", "climate"],
       "status": "active",
       "docs": {
         "homepage": "https://openweathermap.org/api"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "weather.mpp.paywithlocus.com",
@@ -8576,31 +8100,17 @@
       "url": "https://perplexity.mpp.paywithlocus.com",
       "serviceUrl": "https://perplexity.mpp.paywithlocus.com",
       "description": "AI-powered search and chat with Sonar models — real-time web-grounded answers, search, and embeddings.",
-      "categories": [
-        "ai",
-        "search"
-      ],
+      "categories": ["ai", "search"],
       "integration": "third-party",
-      "tags": [
-        "ai",
-        "search",
-        "llm",
-        "chat",
-        "embeddings",
-        "web-grounded"
-      ],
+      "tags": ["ai", "search", "llm", "chat", "embeddings", "web-grounded"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.perplexity.ai"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "perplexity.mpp.paywithlocus.com",
@@ -8673,11 +8183,7 @@
       "url": "https://diffbot.mpp.paywithlocus.com",
       "serviceUrl": "https://diffbot.mpp.paywithlocus.com",
       "description": "Web data extraction, natural language processing, and knowledge graph — extract structured data from any URL, analyze text entities, and search a global knowledge graph.",
-      "categories": [
-        "ai",
-        "data",
-        "web"
-      ],
+      "categories": ["ai", "data", "web"],
       "integration": "third-party",
       "tags": [
         "web-scraping",
@@ -8693,12 +8199,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "diffbot.mpp.paywithlocus.com",
@@ -8883,29 +8385,17 @@
       "url": "https://mathpix.mpp.paywithlocus.com",
       "serviceUrl": "https://mathpix.mpp.paywithlocus.com",
       "description": "OCR for math and scientific documents — extract LaTeX, MathML, and text from images and handwritten strokes.",
-      "categories": [
-        "ai"
-      ],
+      "categories": ["ai"],
       "integration": "third-party",
-      "tags": [
-        "ocr",
-        "math",
-        "latex",
-        "handwriting",
-        "document-processing"
-      ],
+      "tags": ["ocr", "math", "latex", "handwriting", "document-processing"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.mathpix.com"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "mathpix.mpp.paywithlocus.com",
@@ -8950,9 +8440,7 @@
       "url": "https://judge0.mpp.paywithlocus.com",
       "serviceUrl": "https://judge0.mpp.paywithlocus.com",
       "description": "Online code execution engine — compile and run code in 70+ programming languages with sandboxed execution.",
-      "categories": [
-        "compute"
-      ],
+      "categories": ["compute"],
       "integration": "third-party",
       "tags": [
         "code-execution",
@@ -8967,12 +8455,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "judge0.mpp.paywithlocus.com",
@@ -9035,30 +8519,17 @@
       "url": "https://beta-api.paywithlocus.com/api/browser-use-mpp",
       "serviceUrl": "https://beta-api.paywithlocus.com/api/browser-use-mpp",
       "description": "AI-powered browser automation — run tasks in a cloud browser with LLM agents.",
-      "categories": [
-        "ai",
-        "web"
-      ],
+      "categories": ["ai", "web"],
       "integration": "third-party",
-      "tags": [
-        "ai",
-        "browser",
-        "automation",
-        "scraping",
-        "web-agent"
-      ],
+      "tags": ["ai", "browser", "automation", "scraping", "web-agent"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.cloud.browser-use.com"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "browseruse.mpp.paywithlocus.com",
@@ -9107,9 +8578,7 @@
       "url": "https://clado.mpp.paywithlocus.com",
       "serviceUrl": "https://clado.mpp.paywithlocus.com",
       "description": "People search, LinkedIn enrichment, and deep research for lead generation.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
       "tags": [
         "people-search",
@@ -9124,12 +8593,8 @@
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "clado.mpp.paywithlocus.com",
@@ -9282,30 +8747,17 @@
       "url": "https://edgar.mpp.paywithlocus.com",
       "serviceUrl": "https://edgar.mpp.paywithlocus.com",
       "description": "SEC EDGAR public financial data — company filing history, XBRL financial facts, and single-concept time series.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "sec",
-        "edgar",
-        "finance",
-        "filings",
-        "xbrl",
-        "stocks"
-      ],
+      "tags": ["sec", "edgar", "finance", "filings", "xbrl", "stocks"],
       "status": "active",
       "docs": {
         "homepage": "https://www.sec.gov/developer"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "edgar.mpp.paywithlocus.com",
@@ -9364,30 +8816,17 @@
       "url": "https://edgar-search.mpp.paywithlocus.com",
       "serviceUrl": "https://edgar-search.mpp.paywithlocus.com",
       "description": "Full-text search across all SEC filings — 10-Ks, 10-Qs, 8-Ks, proxy statements, and more.",
-      "categories": [
-        "data",
-        "search"
-      ],
+      "categories": ["data", "search"],
       "integration": "third-party",
-      "tags": [
-        "sec",
-        "edgar",
-        "search",
-        "filings",
-        "finance"
-      ],
+      "tags": ["sec", "edgar", "search", "filings", "finance"],
       "status": "active",
       "docs": {
         "homepage": "https://www.sec.gov/developer"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "edgar-search.mpp.paywithlocus.com",
@@ -9418,29 +8857,17 @@
       "url": "https://beta-api.paywithlocus.com/api/laso-mpp",
       "serviceUrl": "https://beta-api.paywithlocus.com/api/laso-mpp",
       "description": "AI-powered virtual debit cards, payments via Venmo/PayPal, and balance management.",
-      "categories": [
-        "data"
-      ],
+      "categories": ["data"],
       "integration": "third-party",
-      "tags": [
-        "finance",
-        "payments",
-        "debit-card",
-        "venmo",
-        "paypal"
-      ],
+      "tags": ["finance", "payments", "debit-card", "venmo", "paypal"],
       "status": "active",
       "docs": {
         "homepage": "https://docs.paywithlocus.com"
       },
       "methods": {
         "tempo": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "0x20c000000000000000000000b9537d11c60e8b50"
-          ]
+          "intents": ["charge"],
+          "assets": ["0x20c000000000000000000000b9537d11c60e8b50"]
         }
       },
       "realm": "laso.mpp.paywithlocus.com",
@@ -9541,28 +8968,17 @@
       "url": "https://climate.stripe.dev",
       "serviceUrl": "https://climate.stripe.dev",
       "description": "Fund permanent carbon removal projects via Stripe Climate.",
-      "categories": [
-        "web"
-      ],
+      "categories": ["web"],
       "integration": "first-party",
-      "tags": [
-        "climate",
-        "carbon",
-        "sustainability",
-        "stripe"
-      ],
+      "tags": ["climate", "carbon", "sustainability", "stripe"],
       "status": "active",
       "docs": {
         "homepage": "https://climate.stripe.dev"
       },
       "methods": {
         "stripe": {
-          "intents": [
-            "charge"
-          ],
-          "assets": [
-            "usd"
-          ]
+          "intents": ["charge"],
+          "assets": ["usd"]
         }
       },
       "realm": "climate.stripe.dev",

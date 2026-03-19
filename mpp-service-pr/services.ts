@@ -671,8 +671,8 @@ export const services: ServiceDef[] = [
     payment: TEMPO_PAYMENT,
     endpoints: [
       {
-        route: "GET /api/mpp/supplier/whale-addresses",
-        desc: "Whale address data feed with confidence scores, trade history, and bot detection",
+        route: "GET /api/mpp/supplier/potential-polymarket-insiders",
+        desc: "Potential Polymarket insiders data feed with confidence scores, trade history, and bot detection",
         dynamic: true,
         amountHint: "$0.10 – $25.00",
       },

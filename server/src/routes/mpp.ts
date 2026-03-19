@@ -1,6 +1,6 @@
 import { Router, type IRouter, type Request, type Response } from "express";
 import { supplierRouter } from "../mpp/supplier/supplierRouter";
-import { whaleAddressesRouter } from "../mpp/supplier/whaleAddressesRoute";
+import { polymarketInsidersRouter } from "../mpp/supplier/polymarketInsidersRoute";
 import { walletIntelRouter } from "../mpp/supplier/walletIntelRoute";
 import {
   consumeService,
@@ -11,7 +11,7 @@ import {
 const router: IRouter = Router();
 
 router.use("/supplier", supplierRouter);
-router.use("/supplier", whaleAddressesRouter);
+router.use("/supplier", polymarketInsidersRouter);
 router.use("/supplier", walletIntelRouter);
 
 router.get("/consumer/wallet", async (_req: Request, res: Response) => {

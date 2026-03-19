@@ -78,7 +78,7 @@ Consumer HTTP routes (mounted at `/api/mpp/consumer`):
 Exposes API routes gated by `mppx.charge()` middleware (returns HTTP 402 challenge when unpaid).
 
 Routes (mounted at `/api/mpp/supplier`):
-- `GET  /whale-addresses` — returns most-recent whale_addresses rows, $0.10/row, max 250 rows ($25 max). Dynamic pricing via headers:
+- `GET  /potential-polymarket-insiders` — returns most-recent whale_addresses rows, $0.10/row, max 250 rows ($25 max). Dynamic pricing via headers:
   - `X-Rows: <n>` — request exactly n rows (capped at 250)
   - `X-Max-Amount: <$>` — budget in dollars (rows = floor(budget / 0.10))
   - No header → 250 rows ($25.00)

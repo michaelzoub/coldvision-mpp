@@ -1,3 +1,3 @@
 export * from "./supplierRouter";
 export * from "./registerRoute";
-export * from "./whaleAddressesRoute";
+export * from "./polymarketInsidersRoute";

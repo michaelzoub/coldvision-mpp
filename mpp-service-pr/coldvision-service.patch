@@ -60,7 +60,7 @@ index 6faaace..66fb7d8 100644
 +      "endpoints": [
 +        {
 +          "method": "GET",
-+          "path": "/api/mpp/supplier/whale-addresses",
++          "path": "/api/mpp/supplier/potential-polymarket-insiders",
 +          "description": "Whale address data feed with confidence scores, trade history, and bot detection",
 +          "payment": {
 +            "intent": "charge",
@@ -112,7 +112,7 @@ index e08b4a5..0943c50 100644
 +    payment: TEMPO_PAYMENT,
 +    endpoints: [
 +      {
-+        route: "GET /api/mpp/supplier/whale-addresses",
++        route: "GET /api/mpp/supplier/potential-polymarket-insiders",
 +        desc: "Whale address data feed with confidence scores, trade history, and bot detection",
 +        dynamic: true,
 +        amountHint: "$0.10 – $25.00",

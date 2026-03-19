@@ -62,7 +62,7 @@ cd client && bun run dev
 |---|---|---|---|
 | `GET` | `/api/mpp/supplier/echo` | $0.001 | Echo service (returns query string) |
 | `POST` | `/api/mpp/supplier/transform` | $0.005 | Uppercase transform |
-| `GET` | `/api/mpp/supplier/whale-addresses` | $0.10-$25.00 | Whale address data feed |
+| `GET` | `/api/mpp/supplier/potential-polymarket-insiders` | $0.10-$25.00 | Potential Polymarket insiders data feed |
 | `GET` | `/api/mpp/supplier/wallet-intel` | $0.50 | Wallet intelligence lookup |
 
 ### Consumer
@@ -71,16 +71,16 @@ cd client && bun run dev
 |---|---|---|
 | `POST` | `/api/mpp/consumer/call` | Call an external MPP service |
 
-## Whale Addresses
+## Potential Polymarket Insiders
 
-Returns whale address data with confidence scores, trade history, and bot detection.
+Returns potential Polymarket insider addresses with confidence scores, trade history, and bot detection.
 
 **Headers:**
 - `x-rows` - Number of rows (1-250, default: 250)
 - `x-max-amount` - Budget in USD (calculates max rows)
 
 ```bash
-mppx "http://localhost:8080/api/mpp/supplier/whale-addresses" -H "x-rows: 5"
+mppx "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 5"
 ```
 
 ## Wallet Intelligence
@@ -149,10 +149,10 @@ curl -fsSL https://tempo.xyz/install | bash
 tempo wallet login
 
 # Dry run (preview cost)
-tempo request --dry-run "http://localhost:8080/api/mpp/supplier/whale-addresses"
+tempo request --dry-run "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders"
 
 # Make a paid request
-tempo request "http://localhost:8080/api/mpp/supplier/whale-addresses" -H "x-rows: 1"
+tempo request "http://localhost:8080/api/mpp/supplier/potential-polymarket-insiders" -H "x-rows: 1"
 ```
 
 > **Note:** Always wrap URLs containing `?` in quotes to prevent zsh glob expansion.
