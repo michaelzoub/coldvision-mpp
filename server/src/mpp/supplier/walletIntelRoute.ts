@@ -22,13 +22,16 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
     return;
   }
 
-  const params = new URLSearchParams({ address });
-
   const [domeResult, identityResult, backendResult] = await Promise.allSettled([
     resolveWallet(address),
     lookupIdentity(address),
-    fetch(`${BACKEND_BASE}/get-insider-confidence?${params}`, {
-      headers: { "x-api-key": BACKEND_API_KEY },
+    fetch(`${BACKEND_BASE}/get-insider-confidence`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": BACKEND_API_KEY,
+      },
+      body: JSON.stringify({ address }),
     }).then((r) => (r.ok ? r.json() : null)),
   ]);
 
@@ -57,7 +60,7 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
     identity: onChain,
     twitter,
     metrics: dome?.wallet_metrics ?? null,
-    ...insiderData,
+    insider: insiderData?.result ?? null,
   });
 };
 
