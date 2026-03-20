@@ -29,7 +29,7 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": BACKEND_API_KEY,
+        "Authorization": `Bearer ${BACKEND_API_KEY}`,
       },
       body: JSON.stringify({ address }),
     }).then((r) => (r.ok ? r.json() : null)),
