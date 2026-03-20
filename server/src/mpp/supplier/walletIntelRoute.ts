@@ -8,6 +8,9 @@ const PRICE_PER_LOOKUP = "0.100";
 
 const ADDRESS_RE = /^0x[0-9a-fA-F]{40}$/;
 
+const BACKEND_BASE = "https://polytics-backend-production-fd1c.up.railway.app";
+const BACKEND_API_KEY = process.env["POLYTICS_API_KEY"] ?? "";
+
 const walletIntelHandler: RequestHandler = async (req, res) => {
   const address = req.query["address"] as string | undefined;
 
@@ -19,13 +22,19 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
     return;
   }
 
-  const [domeResult, identity] = await Promise.allSettled([
+  const params = new URLSearchParams({ address });
+
+  const [domeResult, identityResult, backendResult] = await Promise.allSettled([
     resolveWallet(address),
     lookupIdentity(address),
+    fetch(`${BACKEND_BASE}/get-insider-confidence?${params}`, {
+      headers: { "x-api-key": BACKEND_API_KEY },
+    }).then((r) => (r.ok ? r.json() : null)),
   ]);
 
   const dome = domeResult.status === "fulfilled" ? domeResult.value : null;
-  const onChain = identity.status === "fulfilled" ? identity.value : null;
+  const onChain = identityResult.status === "fulfilled" ? identityResult.value : null;
+  const insiderData = backendResult.status === "fulfilled" ? backendResult.value : null;
 
   let twitter = null;
   const twitterHandle = onChain?.twitter ?? dome?.handle;
@@ -48,6 +57,7 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
     identity: onChain,
     twitter,
     metrics: dome?.wallet_metrics ?? null,
+    ...insiderData,
   });
 };
 
