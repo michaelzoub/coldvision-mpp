@@ -29,15 +29,17 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${BACKEND_API_KEY}`,
+        Authorization: `Bearer ${BACKEND_API_KEY}`,
       },
       body: JSON.stringify({ address }),
     }).then((r) => (r.ok ? r.json() : null)),
   ]);
 
   const dome = domeResult.status === "fulfilled" ? domeResult.value : null;
-  const onChain = identityResult.status === "fulfilled" ? identityResult.value : null;
-  const insiderData = backendResult.status === "fulfilled" ? backendResult.value : null;
+  const onChain =
+    identityResult.status === "fulfilled" ? identityResult.value : null;
+  const insiderData =
+    backendResult.status === "fulfilled" ? backendResult.value : null;
 
   let twitter = null;
   const twitterHandle = onChain?.twitter ?? dome?.handle;
@@ -49,19 +51,27 @@ const walletIntelHandler: RequestHandler = async (req, res) => {
     }
   }
 
-  res.json({
-    address,
-    eoa: dome?.eoa ?? address,
-    proxy: dome?.proxy ?? null,
-    walletType: dome?.wallet_type ?? null,
-    handle: dome?.handle ?? null,
-    pseudonym: dome?.pseudonym ?? null,
-    profileImage: dome?.image ?? onChain?.avatar ?? null,
-    identity: onChain,
-    twitter,
-    metrics: dome?.wallet_metrics ?? null,
-    insider: insiderData?.result ?? null,
-  });
+  const response: Record<string, unknown> = { address };
+
+  const eoa = dome?.eoa;
+  if (eoa && eoa !== address) response.eoa = eoa;
+  if (dome?.proxy) response.proxy = dome.proxy;
+  if (dome?.wallet_type) response.walletType = dome.wallet_type;
+  if (dome?.handle) response.handle = dome.handle;
+  if (dome?.pseudonym) response.pseudonym = dome.pseudonym;
+
+  const profileImage = dome?.image ?? onChain?.avatar;
+  if (profileImage) response.profileImage = profileImage;
+
+  if (onChain && Object.values(onChain).some((v) => v !== null)) {
+    response.identity = onChain;
+  }
+
+  if (twitter) response.twitter = twitter;
+  if (dome?.wallet_metrics) response.metrics = dome.wallet_metrics;
+  if (insiderData?.result) response.insider = insiderData.result;
+
+  res.json(response);
 };
 
 export const walletIntelRouter: IRouter = Router();
