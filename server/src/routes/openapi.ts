@@ -27,6 +27,31 @@ const openapiDocument = {
           maxPrice: MAX_CHARGE.toFixed(6),
           protocols: ["mpp"],
         },
+        requestBody: {
+          required: false,
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  rows: {
+                    type: "integer",
+                    minimum: 1,
+                    maximum: MAX_ROWS,
+                    description: `Number of rows to return (1-${MAX_ROWS}). Price is $${PRICE_PER_ROW}/row. Pass via x-rows header.`,
+                  },
+                  maxAmount: {
+                    type: "number",
+                    minimum: PRICE_PER_ROW,
+                    maximum: MAX_CHARGE,
+                    description:
+                      "Maximum USD budget. Rows returned will fit within this budget. Pass via x-max-amount header.",
+                  },
+                },
+              },
+            },
+          },
+        },
         parameters: [
           {
             name: "x-rows",
@@ -93,6 +118,25 @@ const openapiDocument = {
           pricingMode: "fixed",
           price: "0.100000",
           protocols: ["mpp"],
+        },
+        requestBody: {
+          required: true,
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  address: {
+                    type: "string",
+                    pattern: "^0x[0-9a-fA-F]{40}$",
+                    description:
+                      "Ethereum address to look up (0x-prefixed, 40 hex characters). Pass as query parameter: ?address=0x...",
+                  },
+                },
+                required: ["address"],
+              },
+            },
+          },
         },
         parameters: [
           {
