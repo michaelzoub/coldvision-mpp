@@ -4,10 +4,10 @@ import { PRICE_PER_ROW, MAX_ROWS, MAX_CHARGE } from "../mpp/mppxInstance";
 const openapiDocument = {
   openapi: "3.1.0",
   info: {
-    title: "ColdVision API",
+    title: "coldvision API",
     version: "1.0.0",
     description:
-      "ColdVision provides on-chain intelligence for Polymarket. It exposes payment-gated endpoints for retrieving potential insider whale addresses and detailed wallet intelligence lookups.",
+      "coldvision provides on-chain intelligence for Polymarket. It exposes payment-gated endpoints for retrieving potential insider whale addresses and detailed wallet intelligence lookups.",
     guidance:
       "Use GET /api/mpp/supplier/potential-polymarket-insiders to retrieve a feed of whale addresses suspected of insider activity on Polymarket. Control the number of rows via the x-rows header (1-250) or set a budget via x-max-amount header. Use GET /api/mpp/supplier/wallet-intel?address=0x... to get detailed intelligence on a specific wallet address including on-chain identity, social profiles, and insider confidence scores.",
   },
